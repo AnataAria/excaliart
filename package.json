@@ -1,0 +1,49 @@
+{
+  "name": "excaliart",
+  "version": "1.0.0",
+  "description": "This is a project plate of express js with modular structure",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "bun --hot run src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "prisma:seed": "tsx prisma/seed.ts",
+    "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,md}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,tsx,js,jsx,json,md}\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnataAria/excaliart.git"
+  },
+  "keywords": [],
+  "author": "AnataAria",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnataAria/excaliart/issues"
+  },
+  "homepage": "https://github.com/AnataAria/excaliart#readme",
+  "dependencies": {
+    "@prisma/client": "^6.16.3",
+    "@types/multer": "^2.0.0",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.1.0",
+    "joi": "^18.0.1",
+    "jsonwebtoken": "^9.0.2",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.2.23",
+    "@types/express": "^5.0.3",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^24.6.2",
+    "@types/swagger-jsdoc": "^6.0.4",
+    "@types/swagger-ui-express": "^4.1.8",
+    "prettier": "^3.6.2",
+    "prisma": "^6.16.3",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  }
+}

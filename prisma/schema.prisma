@@ -1,0 +1,37 @@
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Role {
+  id String @id @default(uuid())
+  code String @unique
+  name String @unique
+  userRoles UserRole[]
+  @@map("roles")
+}
+
+model UserRole {
+  id String @id
+  userId String @map("user_id")
+  roleId String @map("role_id")
+  user User @relation(fields: [userId], references: [id])
+  role Role @relation(fields: [roleId], references: [id])
+  @@map("user_roles")
+}
+
+model User {
+  id String @id @default(uuid())
+  email String @unique
+  username String @unique
+  hashPassword String @map("hash_password")
+  passwordSalt String @map("password_salt")
+  joinDate DateTime @default(now()) @map("join_date")
+  userRoles UserRole[]
+  @@map("users")
+}
